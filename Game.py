@@ -14,19 +14,37 @@ class Game(object):
         
     def playGame(self):
         while True:
+            try:
+                first = int(input('Would you like to make the first move? (1 for yes, 0 for no) \n'))
+                if first == 1:
+                    first = 'Human'
+                    break
+                elif first == 0:
+                    first = 'Comp'
+                    break
+                else:
+                    print('Invalid input!')
+            except ValueError:
+                print('Invalid input')
+        while True:
             if not self.comp.isCatsGame() and not self.comp.isWin(self.comp.getMatrix())[0]:
-                self.comp.compMove()
-                displayBoard(self.comp.getMatrix())
+                if first == 'Human':
+                    self.comp.humanMove()
+                else:
+                    self.comp.compMove()
             if not self.comp.isCatsGame() and not self.comp.isWin(self.comp.getMatrix())[0]:
-                self.comp.humanMove()
+                if first == 'Human':
+                    self.comp.compMove()
+                else:
+                    self.comp.humanMove()
             else:
                 break
         if self.comp.isCatsGame():
+            displayBoard(self.comp.getMatrix())
             print('Cats game!')
         elif self.comp.isWin(self.comp.getMatrix())[0]:
+            displayBoard(self.comp.getMatrix())
             print(self.comp.isWin(self.comp.getMatrix())[1], 'wins!')
-
-        
 
 game = Game(Computer())
 game.playGame()

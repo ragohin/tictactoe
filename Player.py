@@ -71,6 +71,7 @@ class Player(object):
             gameMatrix = self.gameMatrix
         while True:
             try:
+                displayBoard(gameMatrix)
                 loc = int(input('Where would you like to play? (Enter number between 1 and 9) \n'))
                 if self.isValidMove(loc-1, gameMatrix):
                     if loc>=1 and loc<=9:
