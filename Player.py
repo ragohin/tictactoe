@@ -73,19 +73,22 @@ class Player(object):
             try:
                 displayBoard(gameMatrix)
                 loc = int(input('Where would you like to play? (Enter number between 1 and 9) \n'))
-                if self.isValidMove(loc-1, gameMatrix):
-                    if loc>=1 and loc<=9:
-                        self.playMove(loc-1, 'O', self.gameMatrix)
-                        break
+                if loc>=1 and loc<=9:
+                    if self.isValidMove(loc-1, gameMatrix):
+                            self.playMove(loc-1, 'O', self.gameMatrix)
+                            break
                     else:
+                        print('\n')
                         displayBoard(gameMatrix)
-                        print('Oops! Please enter a valid number between 1 and 9')
+                        print('\nOops! That space is taken!')
                 else:
+                    print('\n')
                     displayBoard(gameMatrix)
-                    print('Oops! Please enter a valid number between 1 and 9')
+                    print('\nOops! Please enter a valid number between 1 and 9!')
             except ValueError:
+                print('\n')
                 displayBoard(gameMatrix)
-                print('Thats not a number! Try again!')
+                print('\nThats not a number! Try again!')
 
 #INPUT: matrix of 9 elements(either 0, 1, or -1)
 #OUTPUT: display of game board

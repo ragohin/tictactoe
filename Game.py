@@ -15,7 +15,7 @@ class Game(object):
     def playGame(self):
         while True:
             try:
-                first = int(input('Would you like to make the first move? (1 for yes, 0 for no) \n'))
+                first = int(input('You are Os and the Unbeatable Computer is Xs. Would you like to make the first move? (1 for yes, 0 for no) \n'))
                 if first == 1:
                     first = 'Human'
                     break
@@ -40,9 +40,11 @@ class Game(object):
             else:
                 break
         if self.comp.isCatsGame():
+            print('\n')
             displayBoard(self.comp.getMatrix())
             print('Cats game!')
         elif self.comp.isWin(self.comp.getMatrix())[0]:
+            print('\n')
             displayBoard(self.comp.getMatrix())
             print(self.comp.isWin(self.comp.getMatrix())[1], 'wins!')
 
