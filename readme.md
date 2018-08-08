@@ -1,6 +1,6 @@
-Unbeatable Tic-Tac-Toe game. 
+This is an unbeatable Tic-Tac-Toe game programmed in Python. The computer will always win or tie the user.
 
-Rules that constitute a "Perfect Game" are copied below from Wikipedia. (https://en.wikipedia.org/wiki/Tic-tac-toe)
+Rules that constitute a "Perfect Game" (the unbeatable strategy the computer will follow) are copied below from Wikipedia. (https://en.wikipedia.org/wiki/Tic-tac-toe)
 
 1. Win: If the player has two in a row, they can place a third to get three in a row.
 2. Block: If the opponent has two in a row, the player must play the third themselves to block the opponent.
